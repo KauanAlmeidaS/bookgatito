@@ -1,6 +1,7 @@
 <h4 class="text-center">Registre-se e mostre seu pet ao mundo!</h4>
 
 <form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+    
   <div class="form-group">
     <input placeholder="e-mail" class="form-control" formControlName="email" />
     <app-mensagem
@@ -20,6 +21,7 @@
     >
     </app-mensagem>
   </div>
+
   <div class="form-group">
     <input
       placeholder="Nome Completo"
@@ -35,6 +37,7 @@
     >
     </app-mensagem>
   </div>
+
   <div class="form-group">
     <input
       placeholder="Usuário"
@@ -49,11 +52,8 @@
       mensagem="Usuário deve ser em letra minúscula"
     >
     </app-mensagem>
-    <app-mensagem
-      *ngIf="novoUsuarioForm.get('userName')?.errors?.usuarioExistente"
-      mensagem="Usuário já existe"
-    ></app-mensagem>
   </div>
+
   <div class="form-group">
     <input
       type="password"
@@ -61,11 +61,6 @@
       class="form-control"
       formControlName="password"
     />
-    <app-mensagem
-      *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario"
-      mensagem="Senha deve ser diferente do usuário"
-    >
-    </app-mensagem>
   </div>
 
   <button class="btn btn-primary btn-block">Cadastro</button>
